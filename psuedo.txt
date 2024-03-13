@@ -1,0 +1,29 @@
+HTML
+    recipe title input
+
+    ingredient section
+        ingredient text input
+        "add ingredient" button
+        ingredient list div
+            each ingredient, with a button to delete attached (p.s. will need a way to identify the whole div element to delete it)
+        
+    instruction section
+        instruction text input (with 4/5 flex space) "add instruction" button (with 1/5 flex space)
+        instruction step list div
+            each step, with a button to delete attached (p.s. will need a way to identify the whole div element to delete it) (and a number for order [STRETCH w/ git branch])
+
+    "reset" button (describedBy = the text)
+    "export recipe" button (describedBy = the text) (both buttons justified right, taking collectively 1/3 of the div space)
+
+CSS
+    the "add ingredient / instruction button has an ARIA tag of submit (?)
+    ARIA tags to refer to individual list item divs.
+    the instruction / ingredient div is a flex-box, containing all elements, extending the body to scroll if there is overflow.
+    each list item div (generalized for both instructions AND ingredients) is a flex-box, text positioned at flex-start, button positioned at flex-end
+
+JS.... lots of it
+    "add [item]" button takes the innerHTML of the input field and populates a new div (that includes "delete" button) with the text.
+
+    each button: able to be "clicked" with the enter key when focused
+    reset button: sets every input's innerHTML to "" AND deletes *all* list item divs.
+    "export recipe" button makes a recipe object (that fits the requirements of the "whiteRecipeToFile.js" script) and passes it to that .js file.

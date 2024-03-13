@@ -1,0 +1,12 @@
+section {
+    display: flex;
+    /* flex-direction: column; */
+    /* justifying it all in the center?! so confused */
+    border-width: 3px;
+    border-color: black;
+    font-size: x-large;
+}
+.ingredients div{ 
+    display: flex;
+    justify-content: flex-end;
+}
