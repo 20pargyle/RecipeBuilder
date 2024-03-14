@@ -6,33 +6,25 @@
         <link rel="stylesheet" href="RecipeBuilder.css">
     </head>
     <body>
-        <section class="recipe-name">
-            <div></div>
-            <span>Recipe Name: <input id="title-input" type="text"/></span>
-        </section>
-        
-
-        <h3 id="ingredient-header">Instructions</h3>
-        <section aria-labelledby="ingredient-header">
-            <div class="ingredients">
-                <span id="">New instructions: <input id="ingredient-input" type="text"></span>
-                <div class="ingredient-list">
-                    
-                </div>
+        <div class="content">
+            <section class="title">
+                <span id="title-input-label">Recipe Title: <input type="text" aria-describedby="title-input-label"></span>
+            </section>
+            <h3>Ingredients</h3>
+            <section class="ingredients">
+                <span class="input-with-button"><input class="item-text-input" type="text"><button class="add-item-button">+</button></span>
+                <ul id="ingredient-list"></ul>
+            </section>
+            <h3>Instructions</h3>
+            <section class="instructions">
+                <span class="input-with-button"><input class="item-text-input" type="text"><button class="add-item-button">+</button></span>
+                <ul id="instruction-list"></ul>
+            </section>
+            <div id="button-container">
+                <div class="button-spacer">ghjrtuewopsgj</div>
+                <button id="reset-button">Delete All</button>
+                <button id="export-button">Export</button>
             </div>
-        </section>
-        <h3 id="instruction-header">Instructions</h3>
-        <section aria-labelledby="instruction-header">
-            <div class="instructions">
-                <span id="">New instructions: <input id="instruction-input" type="text"></span>
-                <div class="instruction-list">
-                    <p>juhygtfrdes</p>
-                </div>
-            </div>
-        </section>
-        <div id="button-container">
-            <button id="reset-button" aria-details="click to clear all fields">Delete All</button>
-            <button id="export-button" aria-details="click to export recipe">Export</button>
         </div>
     </body>
 </html>

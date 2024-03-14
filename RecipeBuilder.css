@@ -1,12 +1,47 @@
-section {
-    display: flex;
-    /* flex-direction: column; */
-    /* justifying it all in the center?! so confused */
-    border-width: 3px;
-    border-color: black;
-    font-size: x-large;
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.ingredients div{ 
+.content {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    border-width: 2px;
+    border-color: black;
+    border-style: dashed;
+}
+button {
+    flex-grow: 1;
+    flex-basis: 100px;
+}
+.ingredients {
+    border-style: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.input-with-button {
+    display: flex;
+    flex-direction: row;
+}
+#ingredient-input {
+    display: flex;
+    flex-grow: 4;
+    flex-basis: 300px;
+    /* being picky..... won't grow or shrink. Something is restricting the input-with-button box */
+}
+#ingredient-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+li {
+    padding-left: 0px; /* TODO: get rid of the standard ul padding/spacing */
+}
+.button-spacer {
+    flex-grow: 4;
+    padding: 40px;
+}
+#button-container {
+    display: flex;
+    gap: 10px;
+    border-style: inherit;
 }

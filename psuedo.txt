@@ -1,4 +1,5 @@
 HTML
+```
     recipe title input
 
     ingredient section
@@ -14,6 +15,7 @@ HTML
 
     "reset" button (describedBy = the text)
     "export recipe" button (describedBy = the text) (both buttons justified right, taking collectively 1/3 of the div space)
+```
 
 CSS
     the "add ingredient / instruction button has an ARIA tag of submit (?)
@@ -27,3 +29,12 @@ JS.... lots of it
     each button: able to be "clicked" with the enter key when focused
     reset button: sets every input's innerHTML to "" AND deletes *all* list item divs.
     "export recipe" button makes a recipe object (that fits the requirements of the "whiteRecipeToFile.js" script) and passes it to that .js file.
+
+
+Problems I'm encountering along the way:
+    - Each flex-box, though centered, only takes up the default amount of space. Set the flex property so each box's 'basis' is the same.
+    - ONLY the instruction list allows blank text
+    - The ability to delete a list item is unclear to the user
+    - TODO: ALL accessibility things
+
+    
