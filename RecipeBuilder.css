@@ -1,47 +1,59 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+body {
+    background-color: bisque;
+}
+h1 {
+    color: grey;
+}
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-width: 2px;
-    border-color: black;
-    border-style: dashed;
 }
 button {
     flex-grow: 1;
     flex-basis: 100px;
 }
-.ingredients {
-    border-style: inherit;
+.ingredients, .instructions {
     display: flex;
     flex-direction: column;
+    flex-basis: 25vh;
+    padding: 8px 16px;
+    border: 2px solid black;
+    border-radius: 25px;
 }
 .input-with-button {
     display: flex;
     flex-direction: row;
 }
-#ingredient-input {
+.item-text-input {
     display: flex;
     flex-grow: 4;
     flex-basis: 300px;
-    /* being picky..... won't grow or shrink. Something is restricting the input-with-button box */
+    /* how to set a horizontal basis? */
 }
-#ingredient-list {
+.list {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    padding: 0px;
 }
 li {
-    padding-left: 0px; /* TODO: get rid of the standard ul padding/spacing */
+    font-size: 14px;
+    text-wrap: wrap;
+}
+li:hover {
+    color: rgb(76, 1, 1);
+    text-decoration: line-through rgb(255, 70, 70) 2px;
 }
 .button-spacer {
     flex-grow: 4;
-    padding: 40px;
+    flex-basis: 500px;
 }
 #button-container {
     display: flex;
+    margin-top: 20px;
     gap: 10px;
-    border-style: inherit;
 }

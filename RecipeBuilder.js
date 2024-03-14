@@ -3,6 +3,8 @@ const ingredientTextInput = document.getElementById("ingredient-input");
 const ingredientList = document.getElementById("ingredient-list");
 const addItemButtons = document.getElementsByClassName("add-item-button");
 
+const exportButton = document.getElementById("export-button");
+
 for (var i=0; i < addItemButtons.length; i++) {
 
     addItemButtons[i].addEventListener("click", function () {
@@ -19,3 +21,19 @@ for (var i=0; i < addItemButtons.length; i++) {
 
     });
 }
+
+exportButton.addEventListener("click", () => {
+    let listOfIngredients = document.getElementById("ingredient-list").getElementsByTagName("li");
+    let listOfInstructions = document.getElementById("instruction-list").getElementsByTagName("li");
+    let ingredientTextArray = [];
+    let instructionTextArray = [];
+
+    for (let i=0; i < listOfIngredients.length; i++){
+        ingredientTextArray[i] = listOfIngredients[i].textContent;
+    }
+    for (let i=0; i < listOfInstructions.length; i++){
+        instructionTextArray[i] = listOfInstructions[i].textContent;
+    }
+
+    // build something with it
+});
