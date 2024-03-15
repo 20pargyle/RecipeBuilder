@@ -34,7 +34,7 @@ button {
     flex-basis: 300px;
     /* how to set a horizontal basis? */
 }
-.list {
+.ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;

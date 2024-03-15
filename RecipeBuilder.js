@@ -1,8 +1,11 @@
+const titleInput = document.getElementById("recipe-title-input");
 const addIngredientButton = document.getElementById("add-ingredient");
 const ingredientTextInput = document.getElementById("ingredient-input");
 const ingredientList = document.getElementById("ingredient-list");
 const addItemButtons = document.getElementsByClassName("add-item-button");
+const inputs = document.getElementsByTagName("input");
 
+const deleteButton = document.getElementById("reset-button");
 const exportButton = document.getElementById("export-button");
 
 for (var i=0; i < addItemButtons.length; i++) {
@@ -22,6 +25,10 @@ for (var i=0; i < addItemButtons.length; i++) {
     });
 }
 
+deleteButton.addEventListener("click", () => {
+
+});
+
 exportButton.addEventListener("click", () => {
     let listOfIngredients = document.getElementById("ingredient-list").getElementsByTagName("li");
     let listOfInstructions = document.getElementById("instruction-list").getElementsByTagName("li");
@@ -35,5 +42,6 @@ exportButton.addEventListener("click", () => {
         instructionTextArray[i] = listOfInstructions[i].textContent;
     }
 
-    // build something with it
+    const recipe = { title: titleInput.value, ingredients: ingredientTextArray, instructions: instructionTextArray };
+    writeRecipeToFile(recipe);
 });
