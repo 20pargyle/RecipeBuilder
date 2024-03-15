@@ -1,32 +1,44 @@
 const titleInput = document.getElementById("recipe-title-input");
 const addIngredientButton = document.getElementById("add-ingredient");
+const addInstructionButton = document.getElementById("add-instruction");
 const ingredientTextInput = document.getElementById("ingredient-input");
+const instructionTextInput = document.getElementById("instruction-input")
 const ingredientList = document.getElementById("ingredient-list");
-const addItemButtons = document.getElementsByClassName("add-item-button");
+const instructionList = document.getElementById("instruction-list");
 const inputs = document.getElementsByTagName("input");
 
 const deleteButton = document.getElementById("reset-button");
 const exportButton = document.getElementById("export-button");
 
-for (var i=0; i < addItemButtons.length; i++) {
+function addListItem(inputElement, locationElement){
+    const newElement = document.createElement("li");
+    newElement.addEventListener("click", () => { newElement.remove(); });
+    
+    newElement.textContent = inputElement.value;
+    locationElement.appendChild(newElement);
 
-    addItemButtons[i].addEventListener("click", function () {
-        const newElement = document.createElement("li");
-        newElement.addEventListener("click", () => { newElement.remove(); });
-        
-        let inputField = this.parentElement.firstElementChild; // grabs the value of the text input
-        newElement.textContent = inputField.value;
-
-        let itemList = this.parentElement.parentElement.lastElementChild;
-        itemList.insertBefore(newElement, null);
-
-        inputField.value = "";
-
-    });
+    inputElement.value = "";
 }
 
-deleteButton.addEventListener("click", () => {
+addIngredientButton.addEventListener("click", () => {addListItem(ingredientTextInput, ingredientList)});
+ingredientTextInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter"){
+        addListItem(ingredientTextInput, ingredientList);
+    }
+});
+addInstructionButton.addEventListener("click", () => {addListItem(instructionTextInput, instructionList)});
+instructionTextInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter"){
+        addListItem(instructionTextInput, instructionList);
+    }
+});
 
+deleteButton.addEventListener("click", () => {
+    for (let i=0; i < inputs.length; i++){
+        inputs[i].value = "";
+    }
+    ingredientList.innerHTML = "";
+    instructionList.innerHTML = "";
 });
 
 exportButton.addEventListener("click", () => {

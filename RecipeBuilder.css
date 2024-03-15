@@ -24,21 +24,21 @@ button {
     border: 2px solid black;
     border-radius: 25px;
 }
-.input-with-button {
+.input-w-button {
     display: flex;
     flex-direction: row;
 }
-.item-text-input {
+input {
     display: flex;
     flex-grow: 4;
     flex-basis: 300px;
     /* how to set a horizontal basis? */
 }
-.ul {
+ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding: 0px;
+    padding: 4px;
 }
 li {
     font-size: 14px;
