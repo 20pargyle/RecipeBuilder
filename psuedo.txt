@@ -32,13 +32,8 @@ JS.... lots of it
 
 
 Problems I'm encountering along the way:
-    - Each flex-box, though centered, only takes up the default amount of space. Set the flex property so each box's 'basis' is the same.
-    - The ability to delete a list item is unclear to the user
-    - list item text wrapping (limiting the size of that flex-box)
-    
-BIG TODOs:
-    - TODO: ALL accessibility things
-    - TODO: export button
-    - TODO: delete all button (remove li elements, set text inputs to "")
+    - The ability to delete a list item is unclear to the user (especially for accessibility)
+        - how to read / listen to the lists without deleting them
+    - recipe title input not centered
 
     

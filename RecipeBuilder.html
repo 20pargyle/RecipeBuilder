@@ -8,17 +8,17 @@
     <body>
         <div class="content">
             <h1>WorldReciPeace</h1>
-            <section class="title">
-                <span id="title-input-label">Recipe Title: <input id="recipe-title-input" type="text" aria-describedby="title-input-label"></span>
+            <section>
+                <span id="title">Recipe Title: <input id="recipe-title-input" type="text" aria-labelledby="title"></span>
             </section>
             <h3>Ingredients</h3>
             <section class="ingredients">
-                <span class="input-w-button"><input id= "ingredient-input" type="text"><button id="add-ingredient">+</button></span>
+                <span class="input-w-button"><input id= "ingredient-input" type="text" aria-label="Recipe ingredient input"><button id="add-ingredient" aria-label="Add Ingredient button">+</button></span>
                 <ul id="ingredient-list"></ul>
             </section>
             <h3>Instructions</h3>
             <section class="instructions">
-                <span class="input-w-button"><input id="instruction-input" type="text"><button id="add-instruction">+</button></span>
+                <span class="input-w-button"><input id="instruction-input" type="text" aria-label="Recipe instruction input"><button id="add-instruction" aria-label="add instruction button">+</button></span>
                 <ul id="instruction-list"></ul>
             </section>
             <div id="button-container">
