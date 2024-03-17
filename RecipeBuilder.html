@@ -8,21 +8,22 @@
     <body>
         <div class="content">
             <h1>WorldReciPeace</h1>
-            <section>
-                <span id="title">Recipe Title: <input id="recipe-title-input" type="text" aria-labelledby="title"></span>
+            <h2>Recipe Builder</h2>
+            <section id="title-container">
+                <span id="title">Recipe Title:</span><input id="recipe-title-input" type="text" aria-labelledby="title">
             </section>
             <h3>Ingredients</h3>
             <section class="ingredients">
-                <span class="input-w-button"><input id= "ingredient-input" type="text" aria-label="Recipe ingredient input"><button id="add-ingredient" aria-label="Add Ingredient button">+</button></span>
-                <ul id="ingredient-list"></ul>
+                <span class="input-w-button"><input id="ingredient-input" type="text" aria-label="New ingredient input" aria-description="Type new ingredient"><button id="add-ingredient" aria-label="Add Ingredient button" aria-description="Click or press enter to add ingredient to list">+</button></span>
+                <ul id="ingredient-list" aria-label="Ingredient List" aria-live="assertive"></ul>
             </section>
             <h3>Instructions</h3>
             <section class="instructions">
-                <span class="input-w-button"><input id="instruction-input" type="text" aria-label="Recipe instruction input"><button id="add-instruction" aria-label="add instruction button">+</button></span>
-                <ul id="instruction-list"></ul>
+                <span class="input-w-button"><input id="instruction-input" type="text" aria-label="New instruction input" aria-description="Type new instruction"><button id="add-instruction" aria-label="Add Instruction utton" aria-description="Click or press enter to add instruction to list">+</button></span>
+                <ul id="instruction-list" aria-label="Instruction List" aria-live="assertive"></ul>
             </section>
             <div id="button-container">
-                <div class="button-spacer"></div>
+                <div class="button-spacer">Tip: List items can be deleted by clicking on them or press enter while item is focused.</div>
                 <button id="reset-button">Delete All</button>
                 <button id="export-button">Export</button>
             </div>

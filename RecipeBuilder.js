@@ -13,23 +13,35 @@ const exportButton = document.getElementById("export-button");
 function addListItem(inputElement, locationElement){
     const newElement = document.createElement("li");
     newElement.addEventListener("click", () => { newElement.remove(); });
-    
-    newElement.textContent = inputElement.value;
     locationElement.appendChild(newElement);
+    newElement.setAttribute("aria-live", "assertive");
+    newElement.innerText = inputElement.value;   
 
     inputElement.value = "";
 }
 
-addIngredientButton.addEventListener("click", () => {addListItem(ingredientTextInput, ingredientList)});
-ingredientTextInput.addEventListener("keydown", function(e) {
-    if (e.key === "Enter"){
+addIngredientButton.addEventListener("click", () => {
+    if (ingredientTextInput.value !== ""){
         addListItem(ingredientTextInput, ingredientList);
     }
 });
-addInstructionButton.addEventListener("click", () => {addListItem(instructionTextInput, instructionList)});
+ingredientTextInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter"){
+        if (ingredientTextInput.value !== ""){
+            addListItem(ingredientTextInput, ingredientList);
+        }
+    }
+});
+addInstructionButton.addEventListener("click", () => {
+    if (instructionTextInput.value !== ""){
+        addListItem(instructionTextInput, instructionList);
+    }
+});
 instructionTextInput.addEventListener("keydown", function(e) {
     if (e.key === "Enter"){
-        addListItem(instructionTextInput, instructionList);
+        if (instructionTextInput.value !== ""){
+            addListItem(instructionTextInput, instructionList);
+        }
     }
 });
 
